@@ -1,9 +1,5 @@
-# ─── IMPORTS ─────────────────────────────────────────────────────────
-
 import streamlit as st
 from utils import get_transcript, build_vector_store, ask_ai
-
-# ─── PAGE SETUP ──────────────────────────────────────────────────────
 
 st.set_page_config(
     page_title="YouTube Chat",
@@ -11,8 +7,6 @@ st.set_page_config(
 )
 
 st.title("🎥 Chat with YouTube Videos")
-
-# ─── URL INPUT ───────────────────────────────────────────────────────
 
 url = st.text_input("Paste a YouTube URL:")
 
@@ -32,8 +26,6 @@ if url:
             st.session_state.messages = []
 
         st.success("✅ Ready! Ask anything about the video.")
-
-# ─── CHAT INTERFACE ──────────────────────────────────────────────────
 
 if "vector_store" in st.session_state:
 
